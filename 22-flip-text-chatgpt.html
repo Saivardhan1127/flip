@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Flip Effect</title>
+    <style>
+        body {
+            background-color: wheat;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 90%;
+            max-width: 800px;
+            height: 60vh;
+            margin: 50px auto;
+            box-sizing: border-box;
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 10px 15px black;
+        }
+        .container:hover img {
+            transform: scale(1.2);
+            transition: all 0.5s ease;
+        }
+        .container .content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            max-width: 300px;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            transform: perspective(400px) rotateY(90deg);
+            transform-origin: left;
+            color: antiquewhite;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+        .container:hover .content {
+            transform: perspective(400px) rotateY(0deg);
+            transition: all 0.5s ease;
+        }
+        .container h2, .container h4 {
+            margin: 0 0 10px;
+        }
+        button {
+            padding: 10px 15px;
+            border-radius: 50px;
+            background: linear-gradient(45deg, orange, black);
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button a {
+            color: white;
+            text-decoration: none;
+        }
+        button:hover {
+            box-shadow: 0 0 10px bisque;
+        }
+        @media (max-width: 768px) {
+            .container {
+                height: 70vh;
+            }
+            .container .content {
+                width: 60%;
+            }
+        }
+        @media (max-width: 480px) {
+            .container {
+                height: 80vh;
+            }
+            .container .content {
+                width: 100%;
+                height: auto;
+                transform-origin: center;
+            }
+            .container:hover img {
+                transform: scale(1.1);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="sunset.jpg" alt="Beautiful Sunset">
+        <div class="content">
+            <h2 style="color: orange;">Beautiful Sunset</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores nam eaque voluptatem beatae commodi molestiae perspiciatis dolorem qui, magni vitae!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic tenetur saepe repellendus consectetur vitae corrupti!</p>
+            <h4 style="color: bisque;">May every sunrise hold more promise and every sunset more peace</h4>
+            <button><a href="https://en.wikipedia.org/wiki/Sunset" target="_blank">Read More</a></button>
+        </div>
+    </div>
+
+</body>
+</html>
